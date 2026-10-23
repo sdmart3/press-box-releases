@@ -80,8 +80,8 @@ Your settings are never overwritten by copying a newer version over the old one 
 - Press Box works in the regular season only. In the conference championship, bowl and playoff weeks the Scouting and Game Prep items are not offered (your own games play as normal).
 - The mode labels read One, Two and Three (see above).
 - The result counts for the two computer teams only. Your own record and XP are untouched.
-- **Not with Playoff Customizer or Playoff Mode in the same load.** They change the same game logic. Don't use them
-  together.
+- **Not with Playoff Customizer, Dynasty Customizer or Playoff Mode in the same load.** They change the same game logic. Don't use them
+  together. Conference Customizer needs a compat build.
 - **Watch mode:** a controller can rejoin a team from the pause menu. Back out of it and the computer keeps playing.
 - You may see extra duplicate "EA SPORTS Network" entries on the hub. They are cosmetic.
 - Don't resume a quit Press Box game from a mid-game save.

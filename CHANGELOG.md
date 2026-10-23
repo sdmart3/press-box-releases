@@ -5,6 +5,7 @@
 - Final mod title and category: the picker mod is now "Press Box Picker" (Dynasty category), file `Press-Box-Picker-0.2.4.fbmod`.
   Same picker code as before. The plugin files are unchanged from 0.2.0 (tool version 0.2.0 inside).
 - Known limit: the picker works in regular-season weeks only; the championship, bowl and playoff weeks offer no Scouting / Game Prep items.
+- Known limit: not with Playoff Customizer, Dynasty Customizer or Playoff Mode in the same load; Conference Customizer needs a compat build.
 
 ## 0.2.0 (draft)
 
