@@ -77,6 +77,7 @@ Your settings are never overwritten by copying a newer version over the old one 
 ## Known limits
 
 - Only the week's best 7 games are offered for now, until the list can page.
+- Press Box works in the regular season only. In the conference championship, bowl and playoff weeks the Scouting and Game Prep items are not offered (your own games play as normal).
 - The mode labels read One, Two and Three (see above).
 - The result counts for the two computer teams only. Your own record and XP are untouched.
 - **Not with Playoff Customizer or Playoff Mode in the same load.** They change the same game logic. Don't use them
