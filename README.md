@@ -48,11 +48,6 @@ and your choice is kept for next season.
 
 ![The playoff entry in the menu](screenshots/shot-toggle.png)
 
-### Coming from 0.2.1
-
-The old **Scouting** and **Game Prep** hub items are gone. The first time you Advance with this version they are cleared
-from your save, along with any old picks. Nothing else to do.
-
 ## What's in the download
 
 ```
@@ -73,9 +68,9 @@ Manual install\Plugins\              the files that go in your Mod Manager's Plu
 2. Unzip the download anywhere.
 3. Open the `Manual install\Plugins` folder from the download. Copy **everything in it** (`AnyGamePlugin.dll` and the
    `AnyGame` folder) into your Mod Manager's `Plugins` folder. That's the folder next to `MMCModManager.exe`. If there is
-   no `Plugins` folder, create one. (Coming from 0.2.1: the plugin files are the same, you can skip this step.)
+   no `Plugins` folder, create one.
 4. Start the Mod Manager and import `Press-Box-Picker-0.6.3.fbmod` (Import, or drag it in). It shows up in the Dynasty
-   category as "Press Box Picker". Turn it on. Coming from 0.2.1: turn off or remove the old `Press-Box-Picker-0.2.4.fbmod`.
+   category as "Press Box Picker". Turn it on.
 5. **Restart the Mod Manager** if it was open while you copied the files. It only loads plugins when it starts.
 6. Launch the game from the Mod Manager as usual.
 
