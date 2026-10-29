@@ -81,6 +81,37 @@ You end up with:
 <Mod Manager>\Plugins\AnyGame\   anygame.dll, anygame.ini (your settings), plugin.cfg, logs
 ```
 
+## Using Press Box with Playoff Customizer 1.2
+
+Press Box and Playoff Customizer 1.2.0 both change the same dynasty files, so on their own they clash. The **Press Box x
+Playoff Customizer 1.2 patch** (`Press-Box-x-Playoff-Customizer-1.2.0-patch.fbmod`, a separate download on the same release
+page) makes them work together.
+
+**Load order in the Mod Manager (top to bottom):**
+
+1. Playoff Customizer 1.2.0
+2. Press Box Picker 0.6.3
+3. Press Box x Playoff Customizer 1.2 patch, **last** (the bottom of the list)
+
+You still need the Press Box plugin files from the main download.
+
+What you get:
+
+- Both work together: Playoff Customizer runs as normal and the Press Box menu works in Scores / Schedules.
+- The **Watch every playoff game** toggle isn't in the patched version. You can still take any playoff game from the menu
+  (Play, Coach or Watch), and Release game drops it.
+
+Limits:
+
+- Playoff Customizer **1.2.0 only**. The patch is rebuilt for each Playoff Customizer version, so if Playoff Customizer
+  updates, wait for a new patch.
+- Brackets up to 64 teams.
+- If the patch is missing or out of order, one of two things happens: the Press Box menu disappears (safe, Playoff
+  Customizer works normally), or Playoff Customizer's bracket breaks. If you see either, check the order above.
+- Dynasty Customizer is still not compatible.
+
+Playoff Customizer is by its author; this patch contains its files with permission.
+
 ## Settings
 
 Settings are in `<Mod Manager>\Plugins\AnyGame\anygame.ini`. Open it in Notepad (`1` = on, `0` = off), save it, and
@@ -104,9 +135,9 @@ Your settings are never overwritten by copying a newer version over the old one 
 - **Coach mode can sit for 2 to 5 minutes on a punt call before the computer snaps the ball.** It isn't frozen. Wait and it
   carries on by itself.
 - **One dynasty-screen mod at a time.** Other mods that change the dynasty hub screens or the dynasty expression files
-  (Playoff Customizer, Dynasty Customizer, Playoff Mode, DRI+ and the like) clash with Press Box. Use one of them, not both.
-  In a dynasty that already holds Playoff Customizer data the Press Box menu does nothing. A Playoff Customizer compat patch
-  is in testing.
+  (Dynasty Customizer, Playoff Mode, DRI+ and the like) clash with Press Box. Use one of them, not both. Playoff Customizer
+  1.2.0 is the exception: use the patch (see "Using Press Box with Playoff Customizer 1.2"). Dynasty Customizer is still not
+  compatible. Without the patch, in a dynasty that already holds Playoff Customizer data the Press Box menu does nothing.
 - Never use **Super Sim > End Of Game** on a Press Box card. The game can close itself.
 - The card after a game can show the score from the other team's side. It is cosmetic.
 - **Watch mode:** a controller can rejoin a team from the pause menu. Back out of it and the computer keeps playing.
