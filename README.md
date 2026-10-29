@@ -1,26 +1,26 @@
 # Press Box
 
-**Play, coach or watch any CPU-vs-CPU game in your dynasty, every week through the title game.**
+**Play or watch any CPU-vs-CPU game in your dynasty, every week through the title game.**
 
-Press Box is an add-on for College Football 27 dynasty mode. Pick any game between two computer teams, choose a side, and
-choose how to take part. Your own team's game is never touched.
+Press Box is an add-on for College Football 27 dynasty mode. Pick any game between two computer teams on the Schedule, and
+at the controller screen choose what you do: move to a team to play it, or leave the controller in the middle to watch.
+It works the same way in your own games.
 
-- **Play**: you take the controller for that team and play the game yourself.
-- **Coach**: Coach Mode for that game only. You pick the plays, the computer snaps the ball.
-- **Watch**: both teams are played by the computer and you watch.
-
-![The Press Box menu on a game in Scores / Schedules](screenshots/shot-menu.png)
+- **Works with the October 29 game update.**
+- **New in 0.7.0, one flow for everything:** *Take this game* on the Schedule, then the controller screen decides. Move your
+  controller to a team to **play** it. Leave it in the middle to **watch**. The old "Play as / Coach as / Watch this game"
+  menu is gone.
+- **Coaching** is the game's own Coach Mode + Autosnap (Settings), switched on for that game and off again for your normal games.
 
 ## How to use it
 
 1. On the dynasty hub go to **EA SPORTS Network > Scores / Schedules**.
-2. Highlight a game this week between two computer teams and press **A** (Actions). You get the Press Box menu:
-   - **Play as** (away team) / **Play as** (home team)
-   - **Coach as** (away team) / **Coach as** (home team)
-   - **Watch this game**
-   - **Release game**
-3. Pick one. The game shows up as a card on your hub right away.
-4. Open the card and start the game the same way you start your own.
+2. Highlight a game this week between two computer teams and press **A** (Actions). Pick **Take this game**. The game shows up
+   as a card on your hub right away.
+3. Open the card and start the game the same way you start your own. You land on the controller screen.
+4. On the controller screen:
+   - **Move your controller to a team and press Accept:** you play that team (home or away, your choice).
+   - **Leave the controller in the middle and press Accept:** you **watch**. Both teams are played by the computer.
 
 ![A Press Box game card on the hub](screenshots/shot-card.png)
 
@@ -28,33 +28,74 @@ choose how to take part. Your own team's game is never touched.
 
 Good to know:
 
-- **Change your mind:** pick another entry on the same game. It stays one card and switches to the new side or mode.
-- **Release game** drops the card. That game is simmed like any other.
+- **Release game** (in the same menu) drops the card. That game is simmed like any other.
 - **As many games as you like**, up to 15 extra games a week.
 - **Games you took but didn't play** are simmed as normal when you Advance.
 - **The result counts for the two computer teams only.** Your record, XP and coach record don't change.
-- **Your own game:** press A on it and you get the game's normal Force Win popup, nothing from Press Box. This is the same
-  in Scores / Schedules and on your Team Schedule, every week.
+- **Your own game:** press A on it and you get the game's normal Force Win popup, nothing from Press Box. Use the controller
+  screen instead (next section).
+- **Playing signed out of EA:** the "Offline Warning" popup on the Dynasty Play button is gone. You don't need the No Offline
+  Warning mod for it (see Known issues if you use that mod).
+
+### Coaching a game
+
+Press Box no longer has its own Coach Mode. Use the game's: in **Settings** turn on **Coach Mode** and **Autosnap**, take
+the game and play it (the computer snaps the ball, you pick the plays). Turn both off again for your normal games.
 
 ### The playoffs
 
-From the conference championship week through the title game, the menu has one more entry: **Watch every playoff game:
-turn ON**. With it on, every College Football Playoff game between two computer teams gets a Watch card as soon as each
-round is set, through the title game. Pick **turn OFF** to stop. Your own playoff games are never touched.
+From the conference championship week through the title game the menu has one more entry: **Add every playoff game: ON**.
+With it on, every College Football Playoff game between two computer teams gets a card as soon as each round is set, through
+the title game, and you choose play or watch for each one at its controller screen like any other card. Pick **OFF** to stop.
+Your own playoff games are never touched. You can still take any postseason game yourself with **Take this game**.
 
-You can still pick any postseason game yourself (championship games, bowls, playoff games): Play or Coach a game that already
-has a Watch card and that card switches to your choice. The entry only shows from the championship week to the title game,
-and your choice is kept for next season.
+## Your own games: play either team, or watch
 
-![The playoff entry in the menu](screenshots/shot-toggle.png)
+Before one of your own dynasty games the game shows the controller screen with your controller sitting on your team. In the
+stock game it is locked there. With Press Box you can move it, the same way as in Play Now.
+
+1. Start your game as usual. You land on the controller screen.
+2. Push the left stick toward the other team's side to play them, or leave the controller in the middle to watch your own
+   game.
+3. Press **Accept**.
+
+- **Leave the controller on your team** and you play your own team, exactly as before.
+- **Away games:** the controller starts on your team (not the home team), so one habitual press of Accept still plays your
+  own team.
+- **Watching your own game:** the computer plays both teams and the result counts for your team as usual.
+- **Your own custom playbook:** the game can only load it for your own team. When you move to the other team, Press Box uses
+  that team's own book for it. If it can't find it, the controller goes back on your team and `anygame.log` says why.
+
+What counts for whom when you play the opponent:
+
+- **The result is real.** The final score, win or loss, standings and rankings go to the two real teams. If you play the
+  opponent and win, your team loses.
+- **Your record, coach XP and weekly goals follow your team,** which the computer plays. You can't complete your goals or
+  earn your team's XP by playing the other side.
+- **The opponent gets nothing that is only for the user.** Its coach and team progress as for any computer team.
+- Player stats go to the players who played, on their own teams.
+
+Not tested yet: resuming such a game from a mid-game save. **Avoid Super Sim > End Of Game when you are playing the opponent.**
+
+This needs **both halves**: Press Box Picker 0.7.0 (the controller screen part) and the 0.7.0 plugin files (`anygame.dll`).
+Don't mix 0.7.0 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
+
+## Tips
+
+- **Watch: the computer stays in control.** For a watched game Press Box keeps both teams with the computer the whole way, even
+  if a controller comes back from the pause menu, so a kickoff or punt doesn't wait for a play call nobody is going to make. If a
+  watched game ever does wait 30 seconds or more in one place, Press Box writes a line about it in `anygame.log`.
+- **Coach Mode kicks wait for your pick.** In the game's own Coach Mode, kickoffs, punts and safety kicks have a kick-play call
+  screen with no play clock, so the game waits for you. Choose the kick and it carries on.
 
 ## What's in the download
 
 ```
 README.md                            this file
 CHANGELOG.md                         what changed
-Press-Box-Picker-0.6.3.fbmod         the menu mod (import it in the Mod Manager)
+Press-Box-Picker-0.7.0.fbmod         the picker mod (import it in the Mod Manager)
 Manual install\Plugins\              the files that go in your Mod Manager's Plugins folder
+Compatibility patches\               one patch per mod that clashes with Press Box (see below), PATCHES.txt
 ```
 
 ## Requirements
@@ -69,10 +110,14 @@ Manual install\Plugins\              the files that go in your Mod Manager's Plu
 3. Open the `Manual install\Plugins` folder from the download. Copy **everything in it** (`AnyGamePlugin.dll` and the
    `AnyGame` folder) into your Mod Manager's `Plugins` folder. That's the folder next to `MMCModManager.exe`. If there is
    no `Plugins` folder, create one.
-4. Start the Mod Manager and import `Press-Box-Picker-0.6.3.fbmod` (Import, or drag it in). It shows up in the Dynasty
+4. Start the Mod Manager and import `Press-Box-Picker-0.7.0.fbmod` (Import, or drag it in). It shows up in the Dynasty
    category as "Press Box Picker". Turn it on.
 5. **Restart the Mod Manager** if it was open while you copied the files. It only loads plugins when it starts.
 6. Launch the game from the Mod Manager as usual.
+
+**Updating from 0.6.5 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
+`Press-Box-Picker-0.7.0.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
+are missing from an old file and then simply use their defaults (on). Both halves are needed. Cards made with an older Press Box menu still play the way they were picked.
 
 You end up with:
 
@@ -81,36 +126,44 @@ You end up with:
 <Mod Manager>\Plugins\AnyGame\   anygame.dll, anygame.ini (your settings), plugin.cfg, logs
 ```
 
-## Using Press Box with Playoff Customizer 1.2
+## Compatibility patches
 
-Press Box and Playoff Customizer 1.2.0 both change the same dynasty files, so on their own they clash. The **Press Box x
-Playoff Customizer 1.2 patch** (`Press-Box-x-Playoff-Customizer-1.2.0-patch.fbmod`, a separate download on the same release
-page) makes them work together.
+Some dynasty mods change the same game files as Press Box, so on their own one of the two stops working. The
+`Compatibility patches` folder in the download has one small patch for each of them. **Needs the Press Box plugin and Press
+Box Picker installed first** (the Install steps above), then:
+
+| You use | Patch file |
+|---|---|
+| Playoff Customizer 1.3.0 | `Press-Box-x-Playoff-Customizer-1.3.0-patch.fbmod` |
+| Dynasty Customizer 1.1.0 | `Press-Box-x-Dynasty-Customizer-1.1.0-patch.fbmod` |
+| Conference Customizer 1.0.2 | `Press-Box-x-Conference-Customizer-1.0.2-patch.fbmod` |
+| AIO Dynasty Mod v1.3.1 | `Press-Box-x-AIO-Dynasty-1.3.1-patch.fbmod` |
 
 **Load order in the Mod Manager (top to bottom):**
 
-1. Playoff Customizer 1.2.0
-2. Press Box Picker 0.6.3
-3. Press Box x Playoff Customizer 1.2 patch, **last** (the bottom of the list)
+1. The other mod (for example Playoff Customizer 1.3.0)
+2. Press Box Picker 0.7.0
+3. The matching patch, **last** (the bottom of the list)
 
-You still need the Press Box plugin files from the main download.
+Import the patch like the picker and keep all three on. `PATCHES.txt` in that folder says the same in short.
 
-What you get:
+Good to know:
 
-- Both work together: Playoff Customizer runs as normal and the Press Box menu works in Scores / Schedules.
-- The **Watch every playoff game** toggle isn't in the patched version. You can still take any playoff game from the menu
-  (Play, Coach or Watch), and Release game drops it.
+- **Built for the October 29 game update:** these patches are made for the October 29 versions of those mods (Playoff
+  Customizer 1.3.0, Dynasty Customizer 1.1.0, Conference Customizer 1.0.2, AIO Dynasty Mod v1.3.1). Older versions of those mods
+  are not covered; update the mod first.
+- **Use the patch for your exact version.** Each patch is made for one version of the other mod and says so in its
+  description. If that mod updates, wait for a new patch.
+- **Playoff Customizer, Dynasty Customizer and AIO:** the **Add every playoff game** entry isn't in the patched menu. You can
+  still take any playoff game yourself from the menu (Take this game), and Release game drops it. The Playoff Customizer
+  patches work in a dynasty you already have running with that version.
+- **Dynasty Customizer, Conference Customizer and AIO** are for new dynasties: start the dynasty with the mod and its patch on.
+- **Conference Customizer:** everything in Press Box works as usual, including Add every playoff game.
+- If a patch is missing or out of order, either the Press Box menu disappears (safe: the other mod works normally) or the
+  other mod's own changes are lost. If you see either, check the order above.
 
-Limits:
-
-- Playoff Customizer **1.2.0 only**. The patch is rebuilt for each Playoff Customizer version, so if Playoff Customizer
-  updates, wait for a new patch.
-- Brackets up to 64 teams.
-- If the patch is missing or out of order, one of two things happens: the Press Box menu disappears (safe, Playoff
-  Customizer works normally), or Playoff Customizer's bracket breaks. If you see either, check the order above.
-- Dynasty Customizer is still not compatible.
-
-Playoff Customizer is by its author; this patch contains its files with permission.
+Playoff Customizer, Dynasty Customizer, Conference Customizer and AIO Dynasty Mod are by their authors; the patches contain
+their files with permission.
 
 ## Settings
 
@@ -120,27 +173,37 @@ start the game. **The file is read once when the game starts, so change it with 
 | Setting | Default | What it does |
 |---------|---------|--------------|
 | `play` | 1 | Makes the games you take play properly: your coach, the right playbook, the right home or away side. Needed for everything else. |
-| `modes` | 1 | Lets the menu choose Play, Coach or Watch. Leave it at 1. With 0 the Coach and Watch choices do nothing. |
-| `watch` | 0 | 1 = every game you take is watched computer vs computer, whatever you picked. Normally leave at 0. |
-| `coach` | 0 | 1 = every game you take is played in Coach Mode, whatever you picked. Normally leave at 0. |
+| `modes` | 1 | Cards made with an older Press Box menu ("Coach as" / "Watch this game") still play the way they were picked. Leave it at 1. |
+| `watch` | 1 | Leave the controller in the middle of the controller screen and the game is watched, in a game you took and in your own game. 0 = a controller left in the middle is put back on a team. |
+| `coach` | 0 | Leave at 0. To coach, use the game's own Coach Mode + Autosnap in Settings. |
+| `watch_guard` | 1 | In a game you **watch**, both teams stay with the computer for the whole game, even if a controller comes back (for example from the pause menu). Only the watched game. |
+| `stall_log` | 1 | Writes a line to `anygame.log` when a watched game waits in one place for 30 seconds or more. Troubleshooting only; changes nothing. |
+| `ctrl_select` | 1 | Choose a team (or watch) on the controller screen, in a game you took and in your own games (see above). 0 = the game's own controller screen, where your controller stays on your team. |
 | `exit_log` | 0 | 1 = write a line to the log whenever the game closes itself. Only for troubleshooting. |
-
-Turn on only one of `watch` and `coach` at a time.
 
 Your settings are never overwritten by copying a newer version over the old one (copy everything except
 `anygame.ini` and `plugin.cfg`, or keep a backup).
 
 ## Known issues
 
-- **Coach mode can sit for 2 to 5 minutes on a punt call before the computer snaps the ball.** It isn't frozen. Wait and it
-  carries on by itself.
-- **One dynasty-screen mod at a time.** Other mods that change the dynasty hub screens or the dynasty expression files
-  (Dynasty Customizer, Playoff Mode, DRI+ and the like) clash with Press Box. Use one of them, not both. Playoff Customizer
-  1.2.0 is the exception: use the patch (see "Using Press Box with Playoff Customizer 1.2"). Dynasty Customizer is still not
-  compatible. Without the patch, in a dynasty that already holds Playoff Customizer data the Press Box menu does nothing.
+- **Playing the opponent in your own game** works: the result counts for the real teams, so beating your own team costs
+  your team the win, coach XP and goals. Not tested yet: resuming from a
+  mid-game save. **Avoid Super Sim > End Of Game in a game where you are playing the opponent.**
+- **Mods that unlock the controller screen or change `common/ui/node_fe/scriptpod.ast`** clash with the controller select
+  part of the picker. Use one of them, not both.
+- **Mods that change the dynasty hub screens or expression files.** Playoff Customizer (1.3.0), Dynasty
+  Customizer, Conference Customizer and AIO Dynasty Mod work through their patch (see Compatibility patches). Others, such as
+  Playoff Mode or DRI+, still clash with Press Box: use one of them, not both. Without the patch, in a dynasty that already
+  holds Playoff Customizer data the Press Box menu does nothing.
+- **No Offline Warning mod:** Press Box now removes the same Dynasty Play popup itself, so you can turn that mod off. If you keep
+  it (for its sign-in popup at start-up), put it **above** Press Box Picker in the Mod Manager list, or the Press Box menu goes
+  missing.
+- **An extra "Practice" item on the hub** comes from Playoff Customizer, not from Press Box.
 - Never use **Super Sim > End Of Game** on a Press Box card. The game can close itself.
 - The card after a game can show the score from the other team's side. It is cosmetic.
-- **Watch mode:** a controller can rejoin a team from the pause menu. Back out of it and the computer keeps playing.
+- **Watch mode:** Press Box now keeps the computer in control of both teams for the whole watched game (`watch_guard`), so a
+  controller that comes back from the pause menu doesn't hold up a kickoff or punt. If a watched game still waits somewhere,
+  Press Box logs it (`stall_log`): send `anygame.log` and `anygame-status.json`.
 - Don't resume a quit Press Box game from a mid-game save.
 - Press Box stays out of the way if another tool in your game already runs its own copy of this feature.
 
@@ -160,6 +223,11 @@ Common cases:
   unplayed games between two computer teams; your own game always shows the normal popup.
 - **"access denied" in plugin.log:** the game runs as administrator. Run the Mod Manager as administrator too.
 - **`failed` after a game update:** the game changed something. Look for a Press Box update. Your games stay normal.
+- **The controller still can't leave your team in your own game:** check `ctrl_select` is 1 in `anygame.ini`, that Press Box
+  Picker **0.7.0** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
+  can read "partial": the controller select turns itself off and the rest keeps working.
+- **`NOTE: play = 0` in `anygame.log`:** `play` is off in your `anygame.ini`, so Press Box does nothing in the games you take.
+  Set it back to 1.
 
 When reporting a problem, send the three files above.
 
