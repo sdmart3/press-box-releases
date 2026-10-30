@@ -7,7 +7,9 @@ at the controller screen choose what you do: move to a team to play it, or leave
 It works the same way in your own games.
 
 - **Works with the October 29 game update.**
-- **New in 0.7.0, one flow for everything:** *Take this game* on the Schedule, then the controller screen decides. Move your
+- **New in 0.7.1:** *Take this game* works the first time, even before your first Advance. In a watched game press Start for the pause menu
+  (Resume keeps watching; Super Sim and Quit work). Kicks never wait in a watched game on the October 29 update.
+- **0.7.0, one flow for everything:** *Take this game* on the Schedule, then the controller screen decides. Move your
   controller to a team to **play** it. Leave it in the middle to **watch**. The old "Play as / Coach as / Watch this game"
   menu is gone.
 - **Coaching** is the game's own Coach Mode + Autosnap (Settings), switched on for that game and off again for your normal games.
@@ -20,7 +22,8 @@ It works the same way in your own games.
 3. Open the card and start the game the same way you start your own. You land on the controller screen.
 4. On the controller screen:
    - **Move your controller to a team and press Accept:** you play that team (home or away, your choice).
-   - **Leave the controller in the middle and press Accept:** you **watch**. Both teams are played by the computer.
+   - **Leave the controller in the middle and press Accept:** you **watch**. Both teams are played by the computer. Press Start any time
+     for the game's pause menu (Resume keeps watching; Super Sim and Quit work as usual).
 
 ![A Press Box game card on the hub](screenshots/shot-card.png)
 
@@ -45,7 +48,7 @@ the game and play it (the computer snaps the ball, you pick the plays). Turn bot
 ### The playoffs
 
 From the conference championship week through the title game the menu has one more entry: **Add every playoff game: ON**.
-With it on, every College Football Playoff game between two computer teams gets a card as soon as each round is set, through
+The entry appears after your first Take this game / Release game, or after an Advance. With it on, every College Football Playoff game between two computer teams gets a card as soon as each round is set, through
 the title game, and you choose play or watch for each one at its controller screen like any other card. Pick **OFF** to stop.
 Your own playoff games are never touched. You can still take any postseason game yourself with **Take this game**.
 
@@ -77,8 +80,8 @@ What counts for whom when you play the opponent:
 
 Not tested yet: resuming such a game from a mid-game save. **Avoid Super Sim > End Of Game when you are playing the opponent.**
 
-This needs **both halves**: Press Box Picker 0.7.0 (the controller screen part) and the 0.7.0 plugin files (`anygame.dll`).
-Don't mix 0.7.0 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
+This needs **both halves**: Press Box Picker 0.7.1 (the controller screen part) and the 0.7.1 plugin files (`anygame.dll`).
+Don't mix 0.7.1 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
 
 ## Tips
 
@@ -93,7 +96,7 @@ Don't mix 0.7.0 files with older ones. You can turn the side select off with `ct
 ```
 README.md                            this file
 CHANGELOG.md                         what changed
-Press-Box-Picker-0.7.0.fbmod         the picker mod (import it in the Mod Manager)
+Press-Box-Picker-0.7.1.fbmod         the picker mod (import it in the Mod Manager)
 Manual install\Plugins\              the files that go in your Mod Manager's Plugins folder
 Compatibility patches\               one patch per mod that clashes with Press Box (see below), PATCHES.txt
 ```
@@ -110,13 +113,13 @@ Compatibility patches\               one patch per mod that clashes with Press B
 3. Open the `Manual install\Plugins` folder from the download. Copy **everything in it** (`AnyGamePlugin.dll` and the
    `AnyGame` folder) into your Mod Manager's `Plugins` folder. That's the folder next to `MMCModManager.exe`. If there is
    no `Plugins` folder, create one.
-4. Start the Mod Manager and import `Press-Box-Picker-0.7.0.fbmod` (Import, or drag it in). It shows up in the Dynasty
+4. Start the Mod Manager and import `Press-Box-Picker-0.7.1.fbmod` (Import, or drag it in). It shows up in the Dynasty
    category as "Press Box Picker". Turn it on.
 5. **Restart the Mod Manager** if it was open while you copied the files. It only loads plugins when it starts.
 6. Launch the game from the Mod Manager as usual.
 
-**Updating from 0.6.5 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
-`Press-Box-Picker-0.7.0.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
+**Updating from 0.7.0 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
+`Press-Box-Picker-0.7.1.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
 are missing from an old file and then simply use their defaults (on). Both halves are needed. Cards made with an older Press Box menu still play the way they were picked.
 
 You end up with:
@@ -142,7 +145,7 @@ Box Picker installed first** (the Install steps above), then:
 **Load order in the Mod Manager (top to bottom):**
 
 1. The other mod (for example Playoff Customizer 1.3.0)
-2. Press Box Picker 0.7.0
+2. Press Box Picker 0.7.1
 3. The matching patch, **last** (the bottom of the list)
 
 Import the patch like the picker and keep all three on. `PATCHES.txt` in that folder says the same in short.
@@ -177,6 +180,7 @@ start the game. **The file is read once when the game starts, so change it with 
 | `watch` | 1 | Leave the controller in the middle of the controller screen and the game is watched, in a game you took and in your own game. 0 = a controller left in the middle is put back on a team. |
 | `coach` | 0 | Leave at 0. To coach, use the game's own Coach Mode + Autosnap in Settings. |
 | `watch_guard` | 1 | In a game you **watch**, both teams stay with the computer for the whole game, even if a controller comes back (for example from the pause menu). Only the watched game. |
+| `watch_pause` | 1 | While you **watch**, press Start (or the menu button) and the game's own pause menu opens: Resume keeps watching, Super Sim and Quit work as usual. 0 = Start does nothing while you watch. |
 | `stall_log` | 1 | Writes a line to `anygame.log` when a watched game waits in one place for 30 seconds or more. Troubleshooting only; changes nothing. |
 | `ctrl_select` | 1 | Choose a team (or watch) on the controller screen, in a game you took and in your own games (see above). 0 = the game's own controller screen, where your controller stays on your team. |
 | `exit_log` | 0 | 1 = write a line to the log whenever the game closes itself. Only for troubleshooting. |
@@ -224,7 +228,7 @@ Common cases:
 - **"access denied" in plugin.log:** the game runs as administrator. Run the Mod Manager as administrator too.
 - **`failed` after a game update:** the game changed something. Look for a Press Box update. Your games stay normal.
 - **The controller still can't leave your team in your own game:** check `ctrl_select` is 1 in `anygame.ini`, that Press Box
-  Picker **0.7.0** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
+  Picker **0.7.1** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
   can read "partial": the controller select turns itself off and the rest keeps working.
 - **`NOTE: play = 0` in `anygame.log`:** `play` is off in your `anygame.ini`, so Press Box does nothing in the games you take.
   Set it back to 1.

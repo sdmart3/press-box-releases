@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.1
+
+- **Take this game works the first time, even before your first Advance.** 0.7.0 needed one week Advance first.
+- **Watching a game: press Start for the pause menu.** Resume keeps watching; Super Sim and Quit work.
+- **Kicks never wait in a watched game on the October 29 update.** The watch guard didn't turn on in 0.7.0; it does now.
+- **Add every playoff game** appears after your first Take / Release or an Advance.
+- Files: `Press-Box-Picker-0.7.1.fbmod` (replaces 0.7.0), a new `anygame.dll` (tool 0.3.0, updated build: its log still reads 0.3.0) and the four Compatibility patches rebuilt for
+  the new picker. The loader `AnyGamePlugin.dll` is unchanged. Use the picker and `anygame.dll` together.
+- New setting `watch_pause` (default 1). Copy over your old `anygame.ini` and it uses the default.
+
 ## 0.7.0
 
 - **One flow for every game: take it, then the controller decides.** On the Schedule pick **Take this game** (the old "Play as /
