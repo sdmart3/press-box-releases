@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.2
+
+- **With two or more game cards on your hub, each card opens its own game.** After you had watched or played one game you took, pressing another card could open that first game instead.
+- **Watching works next to other plugins that change the game's controller setup.** Watching a game could fail to start if another plugin in your game also changed the controller setup. Press Box now works alongside it, and `anygame.log` names the other plugin when it finds one.
+- **New Compatibility patch for AIO Dynasty Mod v1.4.0.** (The v1.3.1 patch on v1.4.0 would take away its boosters, so each version has its own patch.) The four other patches are rebuilt for the new picker.
+- Files: `Press-Box-Picker-0.7.2.fbmod` (replaces 0.7.1; only its career-actions screen changed), a new `anygame.dll` and the five Compatibility patches. The loader `AnyGamePlugin.dll` is unchanged. Use the picker and `anygame.dll` together; keep your `anygame.ini`.
+
 ## 0.7.1
 
 - **Take this game works the first time, even before your first Advance.** 0.7.0 needed one week Advance first.

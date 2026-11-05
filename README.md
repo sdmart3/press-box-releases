@@ -7,7 +7,10 @@ at the controller screen choose what you do: move to a team to play it, or leave
 It works the same way in your own games.
 
 - **Works with the October 29 game update.**
-- **New in 0.7.1:** *Take this game* works the first time, even before your first Advance. In a watched game press Start for the pause menu
+- **New in 0.7.2:** with two or more game cards on your hub, **each card opens its own game** (before, after you had watched a game, another card could open the wrong one).
+  Watching now also works when another plugin in your game has changed the same part of the game's controller setup; Press Box names that plugin in `anygame.log`.
+  There is a new **Compatibility patch for AIO Dynasty Mod v1.4.0**.
+- **0.7.1:** *Take this game* works the first time, even before your first Advance. In a watched game press Start for the pause menu
   (Resume keeps watching; Super Sim and Quit work). Kicks never wait in a watched game on the October 29 update.
 - **0.7.0, one flow for everything:** *Take this game* on the Schedule, then the controller screen decides. Move your
   controller to a team to **play** it. Leave it in the middle to **watch**. The old "Play as / Coach as / Watch this game"
@@ -80,8 +83,8 @@ What counts for whom when you play the opponent:
 
 Not tested yet: resuming such a game from a mid-game save. **Avoid Super Sim > End Of Game when you are playing the opponent.**
 
-This needs **both halves**: Press Box Picker 0.7.1 (the controller screen part) and the 0.7.1 plugin files (`anygame.dll`).
-Don't mix 0.7.1 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
+This needs **both halves**: Press Box Picker 0.7.2 (the controller screen part) and the 0.7.2 plugin files (`anygame.dll`).
+Don't mix 0.7.2 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
 
 ## Tips
 
@@ -96,7 +99,7 @@ Don't mix 0.7.1 files with older ones. You can turn the side select off with `ct
 ```
 README.md                            this file
 CHANGELOG.md                         what changed
-Press-Box-Picker-0.7.1.fbmod         the picker mod (import it in the Mod Manager)
+Press-Box-Picker-0.7.2.fbmod         the picker mod (import it in the Mod Manager)
 Manual install\Plugins\              the files that go in your Mod Manager's Plugins folder
 Compatibility patches\               one patch per mod that clashes with Press Box (see below), PATCHES.txt
 ```
@@ -113,14 +116,14 @@ Compatibility patches\               one patch per mod that clashes with Press B
 3. Open the `Manual install\Plugins` folder from the download. Copy **everything in it** (`AnyGamePlugin.dll` and the
    `AnyGame` folder) into your Mod Manager's `Plugins` folder. That's the folder next to `MMCModManager.exe`. If there is
    no `Plugins` folder, create one.
-4. Start the Mod Manager and import `Press-Box-Picker-0.7.1.fbmod` (Import, or drag it in). It shows up in the Dynasty
+4. Start the Mod Manager and import `Press-Box-Picker-0.7.2.fbmod` (Import, or drag it in). It shows up in the Dynasty
    category as "Press Box Picker". Turn it on.
 5. **Restart the Mod Manager** if it was open while you copied the files. It only loads plugins when it starts.
 6. Launch the game from the Mod Manager as usual.
 
-**Updating from 0.7.0 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
-`Press-Box-Picker-0.7.1.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
-are missing from an old file and then simply use their defaults (on). Both halves are needed. Cards made with an older Press Box menu still play the way they were picked.
+**Updating from 0.7.1 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
+`Press-Box-Picker-0.7.2.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
+are missing from an old file and then simply use their defaults (on). Both halves are needed. If you use a Compatibility patch, remove the old one too and import the new one from this download (the patches are rebuilt). Turn the new picker and patch on, and restart the Mod Manager. Only `anygame.dll` changed in the plugin files; `AnyGamePlugin.dll` is the same as before. Cards made with an older Press Box menu still play the way they were picked.
 
 You end up with:
 
@@ -141,11 +144,12 @@ Box Picker installed first** (the Install steps above), then:
 | Dynasty Customizer 1.1.0 | `Press-Box-x-Dynasty-Customizer-1.1.0-patch.fbmod` |
 | Conference Customizer 1.0.2 | `Press-Box-x-Conference-Customizer-1.0.2-patch.fbmod` |
 | AIO Dynasty Mod v1.3.1 | `Press-Box-x-AIO-Dynasty-1.3.1-patch.fbmod` |
+| AIO Dynasty Mod v1.4.0 | `Press-Box-x-AIO-Dynasty-1.4.0-patch.fbmod` |
 
 **Load order in the Mod Manager (top to bottom):**
 
 1. The other mod (for example Playoff Customizer 1.3.0)
-2. Press Box Picker 0.7.1
+2. Press Box Picker 0.7.2
 3. The matching patch, **last** (the bottom of the list)
 
 Import the patch like the picker and keep all three on. `PATCHES.txt` in that folder says the same in short.
@@ -153,10 +157,11 @@ Import the patch like the picker and keep all three on. `PATCHES.txt` in that fo
 Good to know:
 
 - **Built for the October 29 game update:** these patches are made for the October 29 versions of those mods (Playoff
-  Customizer 1.3.0, Dynasty Customizer 1.1.0, Conference Customizer 1.0.2, AIO Dynasty Mod v1.3.1). Older versions of those mods
+  Customizer 1.3.0, Dynasty Customizer 1.1.0, Conference Customizer 1.0.2, AIO Dynasty Mod v1.3.1 and v1.4.0). Older versions of those mods
   are not covered; update the mod first.
 - **Use the patch for your exact version.** Each patch is made for one version of the other mod and says so in its
-  description. If that mod updates, wait for a new patch.
+  description. If that mod updates, wait for a new patch. With AIO Dynasty Mod, use the v1.4.0 patch on v1.4.0 and the v1.3.1
+  patch on v1.3.1: the 1.3.1 patch on v1.4.0 would take away its boosters.
 - **Playoff Customizer, Dynasty Customizer and AIO:** the **Add every playoff game** entry isn't in the patched menu. You can
   still take any playoff game yourself from the menu (Take this game), and Release game drops it. The Playoff Customizer
   patches work in a dynasty you already have running with that version.
@@ -228,7 +233,7 @@ Common cases:
 - **"access denied" in plugin.log:** the game runs as administrator. Run the Mod Manager as administrator too.
 - **`failed` after a game update:** the game changed something. Look for a Press Box update. Your games stay normal.
 - **The controller still can't leave your team in your own game:** check `ctrl_select` is 1 in `anygame.ini`, that Press Box
-  Picker **0.7.1** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
+  Picker **0.7.2** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
   can read "partial": the controller select turns itself off and the rest keeps working.
 - **`NOTE: play = 0` in `anygame.log`:** `play` is off in your `anygame.ini`, so Press Box does nothing in the games you take.
   Set it back to 1.
