@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.4
+
+- **Fix: your own home games could get stuck on the READY screen (the keyboard was given the away side); now uses the stock screen by default, moving the controller to the opponent still works.**
+- Files: `Press-Box-Picker-0.7.4.fbmod` (replaces 0.7.3; same picker, new version number), a new `AnyGamePlugin.dll` (adds `ctrl_select_stock_screen = 1` to an `anygame.ini` that doesn't have it yet; a value you set is never changed), a new `anygame.ini` (the setting is on by default) and the six Compatibility patches rebuilt for the new picker. `anygame.dll` is unchanged from 0.7.3.
+
 ## 0.7.3
 
 - **Watching a game after taking control of the opponent could crash. Fixed.** (The watch now loads the team's own playbook, never your custom one.)

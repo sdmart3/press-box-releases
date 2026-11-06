@@ -9,7 +9,8 @@ at the controller screen choose what you do: move to a team to play it, or leave
 It works the same way in your own games.
 
 - **Works with the October 29 game update.**
-- **New in 0.7.3:** **watching a game after taking control of the opponent could crash. Fixed.** Press Box also **no longer conflicts with mods that change the controller/options menu file**:
+- **New in 0.7.4:** **Fix: your own home games could get stuck on the READY screen (the keyboard was given the away side); now uses the stock screen by default, moving the controller to the opponent still works.** (Setting `ctrl_select_stock_screen`, now 1; the plugin adds it to your existing `anygame.ini`.)
+- **0.7.3:** **watching a game after taking control of the opponent could crash. Fixed.** Press Box also **no longer conflicts with mods that change the controller/options menu file**:
   it doesn't replace that file any more, so it works alongside such mods with no patch (the AIO Broadcast mod, for example, works next to it as it is, its scorebug included).
   There is a new **Compatibility patch for AIO Dynasty Mod v1.4.1**.
 - **0.7.2:** with two or more game cards on your hub, **each card opens its own game** (before, after you had watched a game, another card could open the wrong one).
@@ -88,8 +89,8 @@ What counts for whom when you play the opponent:
 
 **Avoid Super Sim > End Of Game when you are playing the opponent, and don't resume such a game from a mid-game save.**
 
-This needs **both halves**: Press Box Picker 0.7.3 (the controller screen part) and the 0.7.3 plugin files (`anygame.dll`).
-Don't mix 0.7.3 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
+This needs **both halves**: Press Box Picker 0.7.4 (the controller screen part) and the 0.7.4 plugin files (`anygame.dll`).
+Don't mix 0.7.4 files with older ones. You can turn the side select off with `ctrl_select = 0` (see Settings).
 
 ## Tips
 
@@ -104,7 +105,7 @@ Don't mix 0.7.3 files with older ones. You can turn the side select off with `ct
 ```
 README.md                            this file
 CHANGELOG.md                         what changed
-Press-Box-Picker-0.7.3.fbmod         the picker mod (import it in the Mod Manager)
+Press-Box-Picker-0.7.4.fbmod         the picker mod (import it in the Mod Manager)
 Manual install\Plugins\              the files that go in your Mod Manager's Plugins folder
 Compatibility patches\               one patch per mod that clashes with Press Box (see below), PATCHES.txt
 ```
@@ -121,14 +122,13 @@ Compatibility patches\               one patch per mod that clashes with Press B
 3. Open the `Manual install\Plugins` folder from the download. Copy **everything in it** (`AnyGamePlugin.dll` and the
    `AnyGame` folder) into your Mod Manager's `Plugins` folder. That's the folder next to `MMCModManager.exe`. If there is
    no `Plugins` folder, create one.
-4. Start the Mod Manager and import `Press-Box-Picker-0.7.3.fbmod` (Import, or drag it in). It shows up in the Dynasty
+4. Start the Mod Manager and import `Press-Box-Picker-0.7.4.fbmod` (Import, or drag it in). It shows up in the Dynasty
    category as "Press Box Picker". Turn it on.
 5. **Restart the Mod Manager** if it was open while you copied the files. It only loads plugins when it starts.
 6. Launch the game from the Mod Manager as usual.
 
-**Updating from 0.7.2 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
-`Press-Box-Picker-0.7.3.fbmod`) **and** copy the new `anygame.dll` over the old one. Keep your `anygame.ini`: the new settings
-are missing from an old file and then simply use their defaults. Both halves are needed. If you use a Compatibility patch, remove the old one too and import the new one from this download (the patches are rebuilt). Turn the new picker and patch on, and restart the Mod Manager. Only `anygame.dll` changed in the plugin files; `AnyGamePlugin.dll` is the same as before. Cards made with an older Press Box menu still play the way they were picked.
+**Updating from 0.7.3 or earlier:** replace the picker (turn off and remove the old Press Box Picker, import
+`Press-Box-Picker-0.7.4.fbmod`) **and** copy the new `AnyGamePlugin.dll` over the old one (`anygame.dll` is the same as in 0.7.3). Keep your `anygame.ini`: a setting missing from an old file simply uses its default (the plugin adds `ctrl_select_stock_screen = 1` for you). Picker and `anygame.dll` go together. Both halves are needed. If you use a Compatibility patch, remove the old one too and import the new one from this download (the patches are rebuilt). Turn the new picker and patch on, and restart the Mod Manager. The first launch after that adds `ctrl_select_stock_screen = 1` to your `anygame.ini` if the line is missing (a value you set yourself is never changed). Cards made with an older Press Box menu still play the way they were picked.
 
 You end up with:
 
@@ -157,7 +157,7 @@ If a base mod updates before a new release, a new patch may be added here as a s
 **Load order in the Mod Manager (top to bottom):**
 
 1. The other mod (for example Playoff Customizer 1.3.0)
-2. Press Box Picker 0.7.3
+2. Press Box Picker 0.7.4
 3. The matching patch, **last** (the bottom of the list)
 
 Import the patch like the picker and keep all three on. `PATCHES.txt` in that folder says the same in short.
@@ -198,6 +198,7 @@ start the game. **The file is read once when the game starts, so change it with 
 | `watch_pause` | 1 | While you **watch**, press Start (or the menu button) and the game's own pause menu opens: Resume keeps watching, Super Sim and Quit work as usual. 0 = Start does nothing while you watch. |
 | `stall_log` | 1 | Writes a line to `anygame.log` when a watched game waits in one place for 30 seconds or more. Troubleshooting only; changes nothing. |
 | `ctrl_select` | 1 | Choose a team (or watch) on the controller screen, in a game you took and in your own games (see above). 0 = the game's own controller screen, where your controller stays on your team. |
+| `ctrl_select_stock_screen` | 1 | Your own HOME game keeps the game's own controller screen data, so it can't get stuck on READY (that happened with a keyboard or a second controller). Moving your controller to the opponent still works. 0 = the old both-sides screen for home games. |
 | `ctrl_select_watch_book` | 1 | Watching after you played the opponent: loads the team's own playbook instead of your custom one, which fixes a crash. Not in the default file; leave it on. |
 | `exit_log` | 0 | 1 = write a line to the log whenever the game closes itself. Only for troubleshooting. |
 
@@ -242,7 +243,7 @@ Common cases:
 - **"access denied" in plugin.log:** the game runs as administrator. Run the Mod Manager as administrator too.
 - **`failed` after a game update:** the game changed something. Look for a Press Box update. Your games stay normal.
 - **The controller still can't leave your team in your own game:** check `ctrl_select` is 1 in `anygame.ini`, that Press Box
-  Picker **0.7.3** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
+  Picker **0.7.4** is on, and that the new `anygame.dll` is the one in the `AnyGame` folder. After a game update the status
   can read "partial": the controller select turns itself off and the rest keeps working.
 - **`NOTE: play = 0` in `anygame.log`:** `play` is off in your `anygame.ini`, so Press Box does nothing in the games you take.
   Set it back to 1.
