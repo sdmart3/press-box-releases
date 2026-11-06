@@ -140,11 +140,14 @@ Box Picker installed first** (the Install steps above), then:
 
 | You use | Patch file |
 |---|---|
-| Playoff Customizer 1.3.0 | `Press-Box-x-Playoff-Customizer-1.3.0-patch.fbmod` |
-| Dynasty Customizer 1.1.0 | `Press-Box-x-Dynasty-Customizer-1.1.0-patch.fbmod` |
-| Conference Customizer 1.0.2 | `Press-Box-x-Conference-Customizer-1.0.2-patch.fbmod` |
-| AIO Dynasty Mod v1.3.1 | `Press-Box-x-AIO-Dynasty-1.3.1-patch.fbmod` |
-| AIO Dynasty Mod v1.4.0 | `Press-Box-x-AIO-Dynasty-1.4.0-patch.fbmod` |
+| Playoff Customizer 1.3.0 | [`Press-Box-x-Playoff-Customizer-1.3.0-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-Playoff-Customizer-1.3.0-patch.fbmod) |
+| Dynasty Customizer 1.1.0 | [`Press-Box-x-Dynasty-Customizer-1.1.0-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-Dynasty-Customizer-1.1.0-patch.fbmod) |
+| Conference Customizer 1.0.2 | [`Press-Box-x-Conference-Customizer-1.0.2-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-Conference-Customizer-1.0.2-patch.fbmod) |
+| AIO Dynasty Mod v1.3.1 | [`Press-Box-x-AIO-Dynasty-1.3.1-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-AIO-Dynasty-1.3.1-patch.fbmod) |
+| AIO Dynasty Mod v1.4.0 | [`Press-Box-x-AIO-Dynasty-1.4.0-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-AIO-Dynasty-1.4.0-patch.fbmod) |
+| AIO Dynasty Mod v1.4.1 | [`Press-Box-x-AIO-Dynasty-1.4.1-patch.fbmod`](https://github.com/sdmart3/press-box-releases/releases/latest/download/Press-Box-x-AIO-Dynasty-1.4.1-patch.fbmod) |
+
+If a base mod updates before a new release, a new patch may be added here as a separate download.
 
 **Load order in the Mod Manager (top to bottom):**
 
