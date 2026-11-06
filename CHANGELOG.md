@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.3
+
+- **Watching a game after taking control of the opponent could crash. Fixed.** (The watch now loads the team's own playbook, never your custom one.)
+- **No longer conflicts with mods that change the controller/options menu file.** Press Box doesn't replace that file any more, so it works alongside such mods with no patch. The AIO Broadcast mod, for example, works next to it as it is: its settings (the scorebug included) work, and you can take a game and watch it.
+- **New Compatibility patch for AIO Dynasty Mod v1.4.1.** The five other patches are rebuilt for the new picker.
+- Files: `Press-Box-Picker-0.7.3.fbmod` (replaces 0.7.2), a new `anygame.dll` and the six Compatibility patches. The loader `AnyGamePlugin.dll` is unchanged. Use the picker and `anygame.dll` together; keep your `anygame.ini`.
+
 ## 0.7.2
 
 - **With two or more game cards on your hub, each card opens its own game.** After you had watched or played one game you took, pressing another card could open that first game instead.
